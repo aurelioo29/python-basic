@@ -1,7 +1,8 @@
-def message_come():
-  print("=======================================")
-  print(f"Selamat datang di game tebak angka")
-  print("=======================================")
+def message_come(judul):
+  garis = "-" * (len(judul) + 10)
+  print(garis)
+  print(f"---- {judul} ----")
+  print(garis)
   
 def tester():
   return print("ini tester")

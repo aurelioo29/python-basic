@@ -5,7 +5,7 @@ import library
 
 random = random.randint(1, 10)
 
-library.message_come()
+library.message_come("Permainan Tebak Angka Goa")
 
 gambar = "|_|"
 goa = [gambar] * 10 # ! Goa Asli
@@ -22,20 +22,27 @@ while input_user == "":
 print("=======================================")
 print(f"Selamat bermain {input_user}")
 print("=======================================")
-tebakan_angka = int(input(f"{goa} \n Tebak angka Goa dari 1-10: ")) # sudah di convery ke integer, karena bawaan input tipe data string
-while tebakan_angka < 1 or tebakan_angka > 10 :
-    input_user = input("(Angka tidak terdeteksi) Masukkan angka Goa dari 1-10: ")
-print("=======================================")
-confirm_message = input(f"Apakah angka {tebakan_angka} sudah benar? (y/n): ")
-print("=======================================")
-if confirm_message == "y":
-    if tebakan_angka == random:
-        print(f"Selamat, tebakan anda benar. \n {join_goa}")
-    else:
-        print(f"Maaf, tebakan anda salah. \n {join_goa}")
-elif confirm_message == "n":
-    print("Anda membatalkan permainan")
-    exit()
-else :
-    print("Inputan tidak valid, program berhenti")
-    exit()
+while True:
+    tebakan_angka = int(input(f"{goa} \n Tebak angka Goa dari 1-10: ")) # sudah di convery ke integer, karena bawaan input tipe data string
+    while tebakan_angka < 1 or tebakan_angka > 10 :
+        input_user = input("(Angka tidak terdeteksi) Masukkan angka Goa dari 1-10: ")
+        tebakan_angka = int(input_user)
+    print("=======================================")
+    confirm_message = input(f"Apakah angka {tebakan_angka} sudah benar? (y/n): ")
+    print("=======================================")
+    if confirm_message == "y":
+        if tebakan_angka == random:
+            print(f"Selamat, tebakan anda benar. \n {join_goa}")
+        else:
+            print(f"Maaf, tebakan anda salah. \n {join_goa}")
+    elif confirm_message == "n":
+        print("Anda membatalkan permainan")
+        exit()
+    else :
+        print("Inputan tidak valid, program berhenti")
+        exit()
+    confirm_message = input("Apakah anda ingin bermain lagi? (y/n): ")
+    if confirm_message == "n":
+        break
+    
+print("Terima kasih sudah bermain")
