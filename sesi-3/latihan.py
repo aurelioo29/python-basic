@@ -1,6 +1,6 @@
 import random
 import sys
-sys.path.insert(0, 'D:/Coding/website/python_basic/package')  # Using forward slashes
+sys.path.insert(0, 'D:/Coding/website/python_basic/package')  # Using forward slashes 
 import library
 
 goa = ["|_|"] * 10  # Goa Asli
@@ -35,7 +35,7 @@ while True:
     else:
         print("Inputan tidak valid, program berhenti")
         exit()
-    # *Validate user want to play again
+    # * Validate user want to play again
     confirm_message = input("Apakah anda ingin bermain lagi? (y/n): ")
     if confirm_message == "n": # Jika inputan "n"
         break
